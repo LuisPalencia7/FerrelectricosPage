@@ -1,5 +1,5 @@
 /* ============================================
-   TOP BANNER
+BANNER PRIMARIO COLOR NEGRO
    ============================================ */
 .top-banner {
   background-color: #333;
@@ -30,7 +30,7 @@
 }
 
 /* ============================================
-   HEADER STYLES
+ESTILOS DEL HEADER
    ============================================ */
 .header {
   background: white;
@@ -170,7 +170,7 @@
 }
 
 /* ============================================
-   CATEGORIES NAVIGATION
+NAVEGACION DE LAS CATEGORIAS
    ============================================ */
 .categories {
   display: flex;
@@ -208,7 +208,7 @@
 }
 
 /* ============================================
-   BANNER SECTION
+SECCION DE LOS BANNER
    ============================================ */
 .banner-section {
   width: 100%;
@@ -395,7 +395,7 @@
 }
 
 /* ============================================
-  SECCION DE MARCAS
+SECCION DE MARCAS
    ============================================ */
 .brand-section {
   background: white;
@@ -410,32 +410,82 @@
   margin-bottom: 30px;
 }
 
-.brand-logo {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.brand-logo .logo {
-  background: var(--primary-yellow);
-  color: var(--primary-black);
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
+.brands-carousel {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
-  font-weight: 700;
-  object-fit: contain;
-  padding: 5px;
+  gap: 30px;
+  position: relative;
 }
 
-.brand-logo p {
+.brand-nav {
+  position: relative;
+  background: var(--primary-yellow);
+  color: var(--primary-black);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 28px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.brand-nav:hover {
+  background: #FFC700;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+
+.brands-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex: 1;
+  max-width: 900px;
+  overflow: hidden;
+}
+
+.brand-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.5s ease;
+  min-width: 120px;
+}
+
+.brand-item.hidden {
+  display: none;
+}
+
+.brand-item.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.brand-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.brand-item:hover .brand-logo {
+  transform: scale(1.1);
+}
+
+.brand-item p {
   font-weight: 600;
   font-size: 14px;
   color: var(--text-gray);
+  margin: 0;
 }
 
 /* ============================================

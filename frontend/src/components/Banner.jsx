@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 export default function Banner() {
   const [index, setIndex] = useState(0)
+  const [brandIndex, setBrandIndex] = useState(0)
 
   const benefits = [
     [
@@ -51,12 +52,24 @@ export default function Banner() {
   const handlePrev = () => setIndex((prev) => (prev - 1 + 2) % 2)
   const handleNext = () => setIndex((prev) => (prev + 1) % 2)
 
+  const handleBrandPrev = () => setBrandIndex((prev) => (prev - 1 + brands.length) % brands.length)
+  const handleBrandNext = () => setBrandIndex((prev) => (prev + 1) % brands.length)
+
+  useEffect(() => {
+    const brandTimer = setInterval(() => {
+      setBrandIndex((prev) => (prev + 1) % brands.length)
+    }, 3000)
+    return () => clearInterval(brandTimer)
+  }, [])
+
   const brands = [
     { name: 'TRUPER', image: '/img/truper.png' },
     { name: 'DeWALT', image: '/img/dewalt.png' },
     { name: 'ABRACOL', image: '/img/abracol.png' },
     { name: 'GRIVAL', image: '/img/grival.png' },
-    { name: 'PAVCO', image: '/img/pavco.png' }
+    { name: 'PAVCO', image: '/img/pavco.png' },
+    { name: 'TITOPABON', image: '/img/titopabon.png' },
+    { name: 'SIKA', image: '/img/sika.png' }
   ]
 
   return (
@@ -98,14 +111,24 @@ export default function Banner() {
       </div>
 
       <div className="brand-section">
-        <h3>NUESTRAS MARCAS</h3>
-        <div className="brand-logo">
-          {brands.map((brand, idx) => (
-            <div key={idx} className="brand-logo">
-              <img src={brand.image} alt={brand.name} className="logo" />
-              <p>{brand.name}</p>
-            </div>
-          ))}
+        <h3>NUESTRAS MARCAS ALIADAS... </h3>
+        <div className="brands-carousel">
+          <button className="brand-nav prev" onClick={handleBrandPrev}>‹</button>
+          
+          <div className="brands-container">
+            {brands.map((brand, idx) => {
+              const position = (idx - brandIndex + brands.length) % brands.length
+              const isVisible = position < 4
+              return (
+                <div key={idx} className={`brand-item ${isVisible ? 'visible' : 'hidden'}`}>
+                  <img src={brand.image} alt={brand.name} className="brand-logo" />
+                  <p>{brand.name}</p>
+                </div>
+              )
+            })}
+          </div>
+
+          <button className="brand-nav next" onClick={handleBrandNext}>›</button>
         </div>
       </div>
     </div>
