@@ -1,75 +1,16 @@
-:root {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  font-weight: 400;
-
-  --primary-yellow: #FFD700;
-  --primary-orange: #f16507;
-  --primary-black: #1a1a1a;
-  --text-gray: #333;
-  --light-gray: #f5f5f5;
-  --border-gray: #ddd;
-  --success-green: #00B000;
-  --accent-cyan: #00D4FF;
-
-  color-scheme: light;
-  color: var(--text-gray);
-  background-color: white;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
-body {
+html,
+body,
+#root {
   margin: 0;
   padding: 0;
-  background-color: white;
-  color: var(--text-gray);
-}
-
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1.2;
-}
-
-a {
-  font-weight: 500;
-  color: var(--primary-yellow);
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-button {
-  border-radius: 6px;
-  border: none;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 600;
-  font-family: inherit;
-  background-color: var(--primary-yellow);
-  color: var(--primary-black);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-button:hover {
-  background-color: #FFC700;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
-}
-button:focus,
-button:focus-visible {
-  outline: none;
-}
-
-#root {
   width: 100%;
+  min-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
 }

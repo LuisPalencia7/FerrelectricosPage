@@ -1,0 +1,22 @@
+{
+  "name": "backend-ferrelectricospage",
+  "version": "1.0.0",
+  "description": "API base para Ferrelectricos Rivera",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "node src/index.js",
+    "start": "node src/index.js",
+    "test": "echo \"No tests configured yet\""
+  },
+  "keywords": [
+    "ferreteria",
+    "api",
+    "express"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

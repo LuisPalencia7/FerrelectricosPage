@@ -1,42 +1,29 @@
-export default function Header() {
+export default function Header({ announcement, primaryCta, whatsappUrl, brand, slogan }) {
   return (
     <>
-      {/* Banner de aviso superior de fondo negro */}
-      <div className="top-banner">
-        <span className="banner-text">
-          En Ferrelectricos Rivera encuentras cientos de productos al mejor precio y calidad.
-          <a href="#" className="banner-link">¡Compra ya!</a>
-        </span>
-      </div>
+      <header className="top-strip">
+        <p>{announcement}</p>
+        <a href={whatsappUrl} target="_blank" rel="noreferrer">
+          {primaryCta}
+        </a>
+      </header>
 
-      {/* Header principal */}
-      <header className="header">
-        <div className="header-top">
-          <div className="logo-section">
-            <div className="logo-box">
-              <span className="logo-text">🏠 FERRELECTRICOS RIVERA</span>
-            </div>
-          </div>
-
-          <div className="search-section">
-            <input
-              className="search"
-              type="text"
-              placeholder="Buscar..."
-            />
-            <button className="search-btn">🔍</button>
-          </div>
-
-          <div className="actions">
-            <button className="action-btn">👤 Iniciar Sesión</button>
-            <button className="cart-btn">
-              <span className="cart-icon">🛒</span>
-              <span className="cart-count">0</span>
-              Mi carrito
-            </button>
+      <nav className="main-nav">
+        <div className="brand-block">
+          <span className="brand-mark">FR</span>
+          <div>
+            <strong>{brand}</strong>
+            <p>{slogan}</p>
           </div>
         </div>
-      </header>
+
+        <div className="nav-links">
+          <a href="#categorias">Categorias</a>
+          <a href="#productos">Productos</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+      </nav>
     </>
-  )
+  );
 }

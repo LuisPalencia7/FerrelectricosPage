@@ -2,13 +2,21 @@ version: "3.9"
 
 services:
   backend:
-    build: ./backend
+    image: node:20-alpine
+    working_dir: /app
+    command: sh -c "npm install && npm run dev"
+    volumes:
+      - ./backend:/app
     ports:
       - "3000:3000"
-    env_file:
-      - .env
+    environment:
+      - PORT=3000
 
   frontend:
-    build: ./frontend
+    image: node:20-alpine
+    working_dir: /app
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0 --port 5173"
+    volumes:
+      - ./frontend:/app
     ports:
       - "5173:5173"

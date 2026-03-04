@@ -1,18 +1,18 @@
-const categories = [
-  'Herramientas',
-  'Construcción',
-  'Seguridad Industrial',
-  'Tecnología',
-  'Hogar',
-  'Ofertas'
-]
-
-export default function Categories() {
+export default function Categories({ categories }) {
   return (
-    <nav className="categories">
-      {categories.map((cat) => (
-        <button key={cat}>{cat}</button>
-      ))}
-    </nav>
-  )
+    <section id="categorias" className="section reveal">
+      <div className="section-head">
+        <h2>Lineas principales</h2>
+        <p>Secciones rapidas para navegar productos y promociones.</p>
+      </div>
+      <div className="category-grid">
+        {categories.map((category) => (
+          <article key={category.title} className="category-card">
+            <h3>{category.title}</h3>
+            <p>{category.desc}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
 }

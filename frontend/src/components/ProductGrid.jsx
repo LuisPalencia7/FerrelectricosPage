@@ -1,26 +1,22 @@
-const products = [
-  { id: 1, name: 'Taladro 550W', price: '$250.000', image: '🔧' },
-  { id: 2, name: 'Juego de Brocas', price: '$45.000', image: '🔩' },
-  { id: 3, name: 'Flexómetro', price: '$25.000', image: '📏' },
-  { id: 4, name: 'Sierra Circular', price: '$180.000', image: '⚙️' },
-  { id: 5, name: 'Destornillador Set', price: '$35.000', image: '🔨' },
-  { id: 6, name: 'Casco de Seguridad', price: '$55.000', image: '🪖' }
-]
-
-export default function ProductGrid() {
+export default function ProductGrid({ products, whatsappUrl }) {
   return (
-    <section className="products-section">
-      <h2 className="products-title">Nuestros Productos</h2>
-      <div className="products">
-        {products.map((p) => (
-          <div className="product-card" key={p.id}>
-            <div className="product-image">{p.image}</div>
-            <h3 className="product-name">{p.name}</h3>
-            <p className="product-price">{p.price}</p>
-            <button className="add-to-cart-btn">Agregar al carrito</button>
-          </div>
+    <section id="productos" className="section reveal">
+      <div className="section-head">
+        <h2>Catalogo destacado</h2>
+        <p>Base ideal para evolucionar luego a carrito y checkout.</p>
+      </div>
+      <div className="product-grid">
+        {products.map((product) => (
+          <article key={product.name} className="product-card">
+            <span className="product-tag">{product.tag}</span>
+            <h3>{product.name}</h3>
+            <p>{product.price}</p>
+            <a href={whatsappUrl} target="_blank" rel="noreferrer">
+              Cotizar ahora
+            </a>
+          </article>
         ))}
       </div>
     </section>
-  )
+  );
 }
