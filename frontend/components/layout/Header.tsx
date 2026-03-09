@@ -1,4 +1,14 @@
-export default function Header({ announcement, primaryCta, whatsappUrl, brand, slogan }) {
+interface HeaderProps {
+  announcement: string;
+  primaryCta:   string;
+  whatsappUrl:  string;
+  brand:        string;
+  slogan:       string;
+}
+
+export default function Header({
+  announcement, primaryCta, whatsappUrl, brand, slogan,
+}: HeaderProps) {
   return (
     <>
       <header className="top-strip">
@@ -18,7 +28,7 @@ export default function Header({ announcement, primaryCta, whatsappUrl, brand, s
         </div>
 
         <div className="nav-links">
-          <a href="#categorias">Categorias</a>
+          <a href="#categorias">Categorías</a>
           <a href="#productos">Productos</a>
           <a href="#nosotros">Nosotros</a>
           <a href="#contacto">Contacto</a>
